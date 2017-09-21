@@ -37,6 +37,13 @@
 	padding-left: 12px;
 	height: 60px;
 }
+.results-header-adjustment {
+	border-radius: 2px;
+	padding-top: 5px;
+	padding-left: 19px;
+	height: 60px;
+	padding-right: 10px;
+}
 .successful-resubmits-header {
 	background-color: #81c0d8;
 }
@@ -59,14 +66,23 @@
 	margin-top: 10px;
 	margin-right: 10px;
 }
+.header-title-results {
+	float: right;
+	color: white;
+	margin-top: 10px;
+	margin-right: 40px;
+}
 .icons {
 	color: white;
-}
-.header-container-blue {
-	background-color: blue;
 }
 .icon-position {
 	float: left;
 	margin-top: 3px !important;
-
+}
+.checkmarks {
+	color: #2aef23;
+}
+.resubmitted-account-names {
+	color: 465560;
+	font-weight: bold;
 }

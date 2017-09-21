@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Icon from './Icon';
 import Header from './Header';
+import CompletedItems from './CompletedItems';
 import './App.css';
 
 import moment from 'moment';
@@ -14,9 +15,10 @@ class Main extends Component {
 			api_key: "",
 			message: "",
 			trustedform_resubmission_array: "",
-			account_name: "",
+			account_name: "test",
 			number_successful_resubmits: "",
-			number_unsuccessful_resubmits: ""
+			number_unsuccessful_resubmits: "",
+			accounts_resubmitted_array: ['ActiveProspect Internal Sandbox', 'test a very large and long account name a little longer', 'next', 'third', 'fourth', 'fifth', 'sixth', 'seven', 'eight']
 		}
 		this.handleUpdateAPIKey = this.handleUpdateAPIKey.bind(this);
 		this.handleFetchLeadsWithTrustedFormErrors = this.handleFetchLeadsWithTrustedFormErrors.bind(this)
@@ -70,7 +72,10 @@ class Main extends Component {
     		<Grid fluid style={{ paddingLeft: "2px", paddingRight: "2px", marginTop: "30px" }}>
     			<Row>
     				<Col xs={12} md={3} style={{ paddingRight: "2px"}} className="left">
-						<Header name="list" className="icons" size="3x" headerType="successful-resubmits-header header" title="Completed" />
+						<Header name="list" className="icons" size="3x" headerType="successful-resubmits-header header" accountsResubmittedArray={this.state.accounts_resubmitted_array} title="Resubmitted" />
+    					{ this.state.accounts_resubmitted_array.length > 0 &&
+    						<CompletedItems accountsResubmittedArray={this.state.accounts_resubmitted_array} name="check" size="2x" className="checkmarks"/>
+    					}
     				</Col>
     				<Col xs={12} md={6} style={{ paddingRight: "5px", paddingLeft: "5px"}} className="center">
     					<Header name="code" className="icons" size="3x" headerType="enter-api-header header" title="Resubmit TrustedForm Certificates"/>
@@ -80,8 +85,8 @@ class Main extends Component {
     				</Col>
     			</Row>
     			<Row>
-    				<Col xs={12} md={6} mdOffset={3} style={{ paddingRight: "5px", paddingLeft: "5px"}}>
-    					<Header name="file" className="icons" size="3x" headerType="results-header header" title="Results"/>
+    				<Col xs={12} style={{ paddingRight: "5px", paddingLeft: "5px"}}>
+    					<Header name="file" className="icons" size="3x" headerType="results-header results-header-adjustment" title={this.state.account_name}/>
     				</Col>
     			</Row>
     		</Grid>
