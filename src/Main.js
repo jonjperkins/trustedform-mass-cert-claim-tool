@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Icon from './Icon';
 import Header from './Header';
 import CompletedItems from './CompletedItems';
+import ViewFlow from './ViewFlow';
 import './App.css';
 
 import moment from 'moment';
@@ -18,7 +19,7 @@ class Main extends Component {
 			account_name: "test",
 			number_successful_resubmits: "",
 			number_unsuccessful_resubmits: "",
-			accounts_resubmitted_array: ['ActiveProspect Internal Sandbox', 'test a very large and long account name a little longer', 'next', 'third', 'fourth', 'fifth', 'sixth', 'seven', 'eight']
+			accounts_resubmitted_array: ['ActiveProspect Internal Sandbox', 'Most Company Names Will Not Be This Long', 'Another Company Name', 'This Looks Better With Actual Names', 'DMi Incorporated', 'Protect America', 'sixth', 'seven', 'eight']
 		}
 		this.handleUpdateAPIKey = this.handleUpdateAPIKey.bind(this);
 		this.handleFetchLeadsWithTrustedFormErrors = this.handleFetchLeadsWithTrustedFormErrors.bind(this)
@@ -74,14 +75,15 @@ class Main extends Component {
     				<Col xs={12} md={3} style={{ paddingRight: "2px"}} className="left">
 						<Header name="list" className="icons" size="3x" headerType="successful-resubmits-header header" accountsResubmittedArray={this.state.accounts_resubmitted_array} title="Resubmitted" />
     					{ this.state.accounts_resubmitted_array.length > 0 &&
-    						<CompletedItems accountsResubmittedArray={this.state.accounts_resubmitted_array} name="check" size="2x" className="checkmarks"/>
+    						<CompletedItems accountsResubmittedArray={this.state.accounts_resubmitted_array} name="check-circle" size="2x" className="checkmarks"/>
     					}
     				</Col>
     				<Col xs={12} md={6} style={{ paddingRight: "5px", paddingLeft: "5px"}} className="center">
     					<Header name="code" className="icons" size="3x" headerType="enter-api-header header" title="Resubmit TrustedForm Certificates"/>
     				</Col>
-    				<Col xs={12} md={3} style={{ paddingLeft: "2px"}} className="right">
+    				<Col xs={12} md={3} style={{ paddingLeft: "2px", textAlign: "center"}} className="right">
     					<Header name="code-fork" className="icons" size="3x" headerType="view-leadconduit-flow header" title="Resubmission Flow" />
+    					<ViewFlow name="info-circle" size="4x" className="info-circle"/>
     				</Col>
     			</Row>
     			<Row>

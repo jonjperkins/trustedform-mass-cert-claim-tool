@@ -67,7 +67,7 @@
 	margin-right: 10px;
 }
 .header-title-results {
-	float: right;
+	float: left;
 	color: white;
 	margin-top: 10px;
 	margin-right: 40px;
@@ -83,6 +83,24 @@
 	color: #2aef23;
 }
 .resubmitted-account-names {
-	color: 465560;
+	color: #465560;
 	font-weight: bold;
+}
+.number-resubmitted {
+	color: #2aef23;
+	font-weight: bold;
+	font-size: 1.1em;
+}
+.info-circle {
+	margin-top: 60px;
+	color: #f58025;
+}
+.view-flow-text {
+	color: #f58025;
+}
+.view-flow-div {
+	text-decoration: none !important;
+}
+.view-flow-div div:hover {
+	background-color: #f8f8f8;
 }

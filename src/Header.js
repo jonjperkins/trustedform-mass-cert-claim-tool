@@ -11,13 +11,16 @@ class Header extends Component {
 	    		</div>
 	    		<div className={this.props.headerType === "results-header" ? "header-title-results" : "header-title"}>
 	    			{ this.props.headerType === "successful-resubmits-header header" &&
-	    			 	<h4><span className="checkmarks">{this.props.accountsResubmittedArray.length}</span> {this.props.title}</h4>
+	    			 	<h4><span className="number-resubmitted">{this.props.accountsResubmittedArray.length}</span> {this.props.title}</h4>
 	    			 }
 	    			{ this.props.headerType === "enter-api-header header" &&
 	    				<h4>{this.props.title}</h4>
 	    			}
 	    			{ this.props.headerType === "view-leadconduit-flow header" &&
 	    				<h4>{this.props.title}</h4>
+	    			}
+	    			{ this.props.headerType === "results-header results-header-adjustment" &&
+	    				<h4>Resubmission Results for <span style={{color: "#f58025"}}>{this.props.title}</span></h4>
 	    			}
 	    		</div>
     		</div>
