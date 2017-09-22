@@ -82,7 +82,7 @@
 .checkmarks {
 	color: #2aef23;
 }
-.resubmitted-account-names {
+.dark-text {
 	color: #465560;
 	font-weight: bold;
 }
@@ -103,4 +103,7 @@
 }
 .view-flow-div div:hover {
 	background-color: #f8f8f8;
+}
+.input {
+	margin-top: 10px;
 }

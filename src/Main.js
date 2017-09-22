@@ -3,6 +3,7 @@ import Icon from './Icon';
 import Header from './Header';
 import CompletedItems from './CompletedItems';
 import ViewFlow from './ViewFlow';
+import Input from './Input';
 import './App.css';
 
 import moment from 'moment';
@@ -16,10 +17,10 @@ class Main extends Component {
 			api_key: "",
 			message: "",
 			trustedform_resubmission_array: "",
-			account_name: "test",
+			account_name: "pending...",
 			number_successful_resubmits: "",
 			number_unsuccessful_resubmits: "",
-			accounts_resubmitted_array: ['ActiveProspect Internal Sandbox', 'Most Company Names Will Not Be This Long', 'Another Company Name', 'This Looks Better With Actual Names', 'DMi Incorporated', 'Protect America', 'sixth', 'seven', 'eight']
+			accounts_resubmitted_array: []
 		}
 		this.handleUpdateAPIKey = this.handleUpdateAPIKey.bind(this);
 		this.handleFetchLeadsWithTrustedFormErrors = this.handleFetchLeadsWithTrustedFormErrors.bind(this)
@@ -43,10 +44,18 @@ class Main extends Component {
 			response.text().then(text => {
 				console.log('this ' + text)
 				var tf_object_array = JSON.parse(text)
-				console.log(tf_object_array[0])
+				console.log(tf_object_array[-1])
+				console.log('full array upon entering: ' + tf_object_array)
 				if (this.state.tf_object_array.response === "none" ) {
 					this.setState({ message: "There have been no TrustedForm errors in the " + tf_object_array[0].account + "in the last 3 days."})
 				} else {
+					this.setState({account_name: tf_object_array.pop()})
+					this.setState(previousState => ({
+						accounts_resubmitted_array: [...previousState.accounts_resubmitted_array, this.state.account_name]
+					}));
+
+					
+					console.log('after pop: ' + tf_object_array)
 					var trustedform_array = []
 					for (var i = 0; i < tf_object_array.length; i++) {
 						trustedform_array.push(tf_object_array[i]);
@@ -80,6 +89,7 @@ class Main extends Component {
     				</Col>
     				<Col xs={12} md={6} style={{ paddingRight: "5px", paddingLeft: "5px"}} className="center">
     					<Header name="code" className="icons" size="3x" headerType="enter-api-header header" title="Resubmit TrustedForm Certificates"/>
+    					<Input api_key={this.state.api_key} handleUpdateAPIKey={this.handleUpdateAPIKey} handleFetchLeadsWithTrustedFormErrors={this.handleFetchLeadsWithTrustedFormErrors} />
     				</Col>
     				<Col xs={12} md={3} style={{ paddingLeft: "2px", textAlign: "center"}} className="right">
     					<Header name="code-fork" className="icons" size="3x" headerType="view-leadconduit-flow header" title="Resubmission Flow" />

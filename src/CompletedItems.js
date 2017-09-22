@@ -20,7 +20,7 @@ class CompletedItems extends Component {
 	    					</Col>
 	    					<Col md={10}>
 	    						<div>
-	    							<h5 className="resubmitted-account-names">{account}</h5>
+	    							<h5 className="dark-text">{account}</h5>
 	    						</div>
 	    					</Col>
   						</Row>
