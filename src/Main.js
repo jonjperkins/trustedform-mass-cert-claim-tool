@@ -21,7 +21,8 @@ class Main extends Component {
 			account_name: "pending...",
 			number_successful_resubmits: "",
 			number_unsuccessful_resubmits: "",
-			accounts_resubmitted_array: []
+			accounts_resubmitted_array: [],
+			error_message: ""
 		}
 		this.handleUpdateAPIKey = this.handleUpdateAPIKey.bind(this);
 		this.handleFetchLeadsWithTrustedFormErrors = this.handleFetchLeadsWithTrustedFormErrors.bind(this)
@@ -30,6 +31,7 @@ class Main extends Component {
 		this.setState({ api_key: event.target.value });
 	}
 	handleFetchLeadsWithTrustedFormErrors() {
+		this.setState({error_message: ""});
 		//begin date --> moment().subtract(3, 'days').format('YYYY-MM-DD')
 		var URL = "https://next.leadconduit.com/events?recipient_id=535e9f8c94149d05b5000002&type=recipient&outcome=error&start=" + "2017-09-10" + "&end=" + moment().format('YYYY-MM-DD') + ""
 		var request = new Request("http://localhost:8080/trusted-form-errors", {
@@ -44,6 +46,18 @@ class Main extends Component {
 		.then((response) => {
 			response.text().then(text => {
 				console.log('this ' + text)
+				if (text === "bad_api_key") {
+					this.setState({error_message: "Please use a valid API Key."})
+					return;
+				}
+				if (text === "none") {
+					this.setState({error_message: "There were no TrustedForm errors for this account in the last 3 days."})
+					return;
+				}
+				if (text === "unknown_error") {
+					this.setState({error_message: "An unknown error occurred."})
+					return;
+				}
 				var tf_object_array = JSON.parse(text)
 				console.log(tf_object_array[-1])
 				console.log('full array upon entering: ' + tf_object_array)
@@ -88,7 +102,7 @@ class Main extends Component {
     				</Col>
     				<Col xs={12} md={6} style={{ paddingRight: "2px", paddingLeft: "2px", height: "50vh"}} className="center">
     					<Header name="code" className="icons" size="3x" headerType="enter-api-header header" title="Resubmit TrustedForm Certificates"/>
-    					<Input api_key={this.state.api_key} handleUpdateAPIKey={this.handleUpdateAPIKey} handleFetchLeadsWithTrustedFormErrors={this.handleFetchLeadsWithTrustedFormErrors} />
+    					<Input api_key={this.state.api_key} handleUpdateAPIKey={this.handleUpdateAPIKey} handleFetchLeadsWithTrustedFormErrors={this.handleFetchLeadsWithTrustedFormErrors} errorMessage={this.state.error_message} />
     				</Col>
     				<Col xs={12} md={3} style={{ paddingLeft: "2px", textAlign: "center", height: "42vh"}} className="right">
     					<Header name="info-circle" className="icons" size="3x" headerType="view-leadconduit-flow header" title="LeadConduit Flow" />
