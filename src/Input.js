@@ -8,7 +8,7 @@ var FontAwesome = require('react-fontawesome');
 class Input extends Component {
 	render() {
     	return (
-    			<div style={{height: "242px"}}>
+    			<div style={{height: "100%"}}>
                     <Row>
                         <Col xs={8} xsOffset={2}>
                             <h5 style={{textAlign: "center", marginTop: "90px"}} className="dark-text">Enter the API Key for the Relevant Account and Click Resubmit Below.</h5>
