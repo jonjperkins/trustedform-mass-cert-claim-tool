@@ -11,7 +11,7 @@ class Input extends Component {
     			<div style={{height: "242px"}}>
                     <Row>
                         <Col xs={8} xsOffset={2}>
-                            <h5 style={{textAlign: "center", marginTop: "60px"}} className="dark-text">Enter the API Key for the Relevant Account and Click Resubmit Below.</h5>
+                            <h5 style={{textAlign: "center", marginTop: "90px"}} className="dark-text">Enter the API Key for the Relevant Account and Click Resubmit Below.</h5>
                         </Col>
                     </Row>
                     <Row>

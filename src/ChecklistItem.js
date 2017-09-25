@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Icon from './Icon';
-import ChecklistItem from './ChecklistItem';
 import './App.css';
 import 'font-awesome/css/font-awesome.css';
 
@@ -12,15 +11,17 @@ class CompletedItems extends Component {
 		console.log(typeof this.props.accountsResubmittedArray);
 	}
 	render() {
-    	return (
-    		<div className="list-div"> 
-    			
-	    		{	this.props.accountsResubmittedArray.map((account) => 				
-  						<ChecklistItem account={account} name="check" size="2x" className="checkmarks"/>
-  					)
-	    		}
-	    		
-    		</div>
+    	return (				
+			<Row>
+				<Col md={2}>
+					<Icon name={this.props.name} className={this.props.className} size={this.props.size} />    					
+				</Col>
+				<Col md={10}>
+					<div>
+						<h5 className="dark-text">{this.props.account}</h5>
+					</div>
+				</Col>
+			</Row>
     	);
     }
 }

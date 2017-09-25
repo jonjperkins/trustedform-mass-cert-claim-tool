@@ -20,7 +20,7 @@ class Header extends Component {
 	    				<h4>{this.props.title}</h4>
 	    			}
 	    			{ this.props.headerType === "results-header results-header-adjustment" &&
-	    				<h4>Resubmission Results for <span style={{color: "#f58025"}}>{this.props.title}</span></h4>
+	    				<h4>Results for <span style={{color: "#f58025"}}>{this.props.title}</span></h4>
 	    			}
 	    		</div>
     		</div>
