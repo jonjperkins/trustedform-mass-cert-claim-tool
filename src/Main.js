@@ -99,7 +99,7 @@ class Main extends Component {
     				<Col md={3}/>
     				<Col md={6} xs={12} style={{ paddingRight: "2px", paddingLeft: "2px" }}>
     					<Header name="file" className="icons" size="3x" headerType="results-header results-header-adjustment" title={this.state.account_name}/>
-    					<Results numberSuccessfulResubmits={this.props.number_successful_resubmits} numberUnsuccessfulResubmits={this.state.number_unsuccessful_resubmits} />
+    					<Results numberSuccessfulResubmits={this.state.number_successful_resubmits} numberUnsuccessfulResubmits={this.state.number_unsuccessful_resubmits} />
     				</Col>
     				<Col md={3} xs ={12} style={{paddingLeft: "2px", textAlign: "center", height: "42vh"}}>
     					<Header name="paper-plane" className="icons" size="3x" headerType="view-leadconduit-flow header" title="Zendesk Batch File" />

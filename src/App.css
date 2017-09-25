@@ -121,3 +121,17 @@
 .grayed-out {
 	color: #D6D6D7;
 }
+.numerical-count {
+	font-size: 10em;
+	color: #313132;
+}
+.numerical-count-box {
+	height: 30vh;
+	overflow-x: scroll;
+}
+.successful {
+	color: #2aef23;
+}
+.unsuccessful {
+	color: #FE2533;
+}

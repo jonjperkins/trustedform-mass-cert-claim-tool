@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Icon from './Icon';
+import ResultCount from './ResultCount';
 import './App.css';
 import 'font-awesome/css/font-awesome.css';
 
@@ -9,10 +10,14 @@ var FontAwesome = require('react-fontawesome');
 class Results extends Component {
 	render() {
     	return (
-    		<div>
-    			<h4>Number of Successful Claims: {this.props.numberSuccessfulResubmits}</h4>
-    			<h4>Number of Unsuccessful Claims: {this.props.numberUnsuccessfulResubmits}</h4>
-    		</div>
+    		<Row>
+    			<Col md={6} style={{textAlign: "center"}}>
+    				<ResultCount className="successful" number={this.props.numberSuccessfulResubmits} text="Successful Claims" />
+    			</Col>
+    			<Col md={6} style={{textAlign: "center"}}>
+    				<ResultCount className="unsuccessful" number={this.props.numberUnsuccessfulResubmits} text="Unsuccessful Claims" />
+    			</Col>
+    		</Row>
 
 		);
     }
