@@ -84,9 +84,7 @@ class Main extends Component {
     			<Row>
     				<Col xs={12} md={3} style={{ paddingRight: "2px"}} className="left">
 						<Header name="list" className="icons" size="3x" headerType="successful-resubmits-header header" accountsResubmittedArray={this.state.accounts_resubmitted_array} title="Resubmitted" />
-    					{ this.state.accounts_resubmitted_array.length > 0 &&
     						<CompletedItems accountsResubmittedArray={this.state.accounts_resubmitted_array} name="check-circle" size="2x" className="checkmarks"/>
-    					}
     				</Col>
     				<Col xs={12} md={6} style={{ paddingRight: "2px", paddingLeft: "2px", height: "50vh"}} className="center">
     					<Header name="code" className="icons" size="3x" headerType="enter-api-header header" title="Resubmit TrustedForm Certificates"/>

@@ -18,7 +18,7 @@ class CompletedItems extends Component {
 				</Col>
 				<Col md={10}>
 					<div>
-						<h5 className="dark-text">{this.props.account}</h5>
+						<h5 className={this.props.textColor}>{this.props.account}</h5>
 					</div>
 				</Col>
 			</Row>
