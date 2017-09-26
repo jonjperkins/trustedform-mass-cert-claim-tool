@@ -34,6 +34,7 @@ class Main extends Component {
 		this.setState({error_message: ""});
 		//begin date --> moment().subtract(3, 'days').format('YYYY-MM-DD')
 		var URL = "https://next.leadconduit.com/events?recipient_id=535e9f8c94149d05b5000002&type=recipient&outcome=error&start=" + moment().subtract(3, 'days').format('YYYY-MM-DD') + "&end=" + moment().format('YYYY-MM-DD') + ""
+		console.log("POST request URL: " + URL)
 		var request = new Request("http://leadconduit-node-server.herokuapp.com/trusted-form-errors", {
 			method: "POST",
 			headers: new Headers({
