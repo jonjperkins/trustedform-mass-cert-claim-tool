@@ -17,7 +17,7 @@ class Input extends Component {
                     <Row>
                         <Col xs={6} xsOffset={3}>
     				        <FormControl autoFocus name="api_key" className="input" type="text" required onChange={this.props.handleUpdateAPIKey}></FormControl>
-                            <p style={{color: "#FE2533"}}>{this.props.errorMessage}</p>
+                            <h6 style={{color: "#FE2533", height: "2vh"}}>{this.props.errorMessage}</h6>
                         </Col>
                     </Row>
                     <Row> 

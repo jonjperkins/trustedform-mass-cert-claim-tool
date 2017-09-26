@@ -33,7 +33,7 @@ class Main extends Component {
 	handleFetchLeadsWithTrustedFormErrors() {
 		this.setState({error_message: ""});
 		//begin date --> moment().subtract(3, 'days').format('YYYY-MM-DD')
-		var URL = "https://next.leadconduit.com/events?recipient_id=535e9f8c94149d05b5000002&type=recipient&outcome=error&start=" + "2017-09-10" + "&end=" + moment().format('YYYY-MM-DD') + ""
+		var URL = "https://next.leadconduit.com/events?recipient_id=535e9f8c94149d05b5000002&type=recipient&outcome=error&start=" + moment().subtract(3, 'days').format('YYYY-MM-DD') + "&end=" + moment().format('YYYY-MM-DD') + ""
 		var request = new Request("http://localhost:8080/trusted-form-errors", {
 			method: "POST",
 			headers: new Headers({
@@ -121,45 +121,6 @@ class Main extends Component {
     				</Col>
     			</Row>
     		</Grid>
-
-
-
-    		/* <div>
-				<div className="App-header">
-	          		<img src="https://activeprospect.com/wp-content/themes/activeprospect/assets/images/logo-trustedform--white.svg" className="App-logo" alt="logo" />
-	          		<h2>Mass Certificate Claiming Tool</h2>
-	          		<h5><em>When there are a ton of errors and you <span className="green">"just can't even"</span>.</em></h5>
-	        	</div>
-	        	<p className="App-intro">
-	          		<Form>
-						<FormGroup>
-							
-							<p>
-								<strong>API Key:</strong>
-								<FormControl name="api_key" className="input extra-margins" type="text" required onChange={this.handleUpdateAPIKey}></FormControl>
-							</p>
-						</FormGroup>
-					</Form>
-				</p>
-				{(this.state.trustedform_resubmission_array.length === 0 ) && 
-					<button className="test-next-button" style={{ textDecoration: "none" }} disabled={(!this.state.api_key)} onClick={this.handleFetchLeadsWithTrustedFormErrors}>Submit</button>
-	        	}
-
-	        	{(this.state.trustedform_resubmission_array.length > 0 ) && 
-	        		<div>
-		        		<div>
-		        			<p>There were <strong>{this.state.trustedform_resubmission_array.length}</strong> TrustedForm errors in this <strong>{this.state.account_name}</strong> account in the last 3 days.</p>
-		        		</div>
-		        		<div>
-		        			<h3>TF server responses counter</h3>
-			        		<p>Number of successful resubmits: {this.state.number_successful_resubmits}</p>
-			        		<p>Number of unsuccessful resubmits: {this.state.number_unsuccessful_resubmits}</p>
-		        		</div>
-
-		        	</div>
-		        }
-        	</div> */
-
   		)
     }
 };
