@@ -5,14 +5,14 @@ var FontAwesome = require('react-fontawesome');
 
 class Icon extends Component {
 	render() {
-    	return (
-    		<FontAwesome 
-    			className={this.props.className} 
-    			name={this.props.name} 
-    			size={this.props.size} 
-    		/>
-    	);
-    }
+    return (
+      <FontAwesome 
+    	  className={this.props.className} 
+    		name={this.props.name} 
+    		size={this.props.size} 
+    	/>
+    );
+  }
 }
 
 export default Icon;
