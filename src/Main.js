@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Icon from './Icon';
 import Header from './Header';
 import CompletedItems from './CompletedItems';
 import ViewFlow from './ViewFlow';
@@ -32,7 +31,6 @@ class Main extends Component {
 	}
 	handleFetchLeadsWithTrustedFormErrors() {
 		this.setState({error_message: ""});
-		//begin date --> moment().subtract(3, 'days').format('YYYY-MM-DD')
 		var URL = "https://next.leadconduit.com/events?recipient_id=535e9f8c94149d05b5000002&type=recipient&outcome=error&start=" + moment().subtract(3, 'days').format('YYYY-MM-DD') + "&end=" + moment().format('YYYY-MM-DD') + ""
 		console.log("POST request URL: " + URL)
 		var request = new Request("http://leadconduit-node-server.herokuapp.com/trusted-form-errors", {
@@ -60,8 +58,6 @@ class Main extends Component {
 					return;
 				}
 				var tf_object_array = JSON.parse(text)
-				console.log(tf_object_array[-1])
-				console.log('full array upon entering: ' + tf_object_array)
 				if (this.state.tf_object_array.response === "none" ) {
 					this.setState({ message: "There have been no TrustedForm errors in the " + tf_object_array[0].account + "in the last 3 days."})
 				} else {
@@ -69,13 +65,9 @@ class Main extends Component {
 					this.setState(previousState => ({
 						accounts_resubmitted_array: [...previousState.accounts_resubmitted_array, this.state.account_name]
 					}));
-
-					
-					console.log('after pop: ' + tf_object_array)
 					var trustedform_array = []
 					for (var i = 0; i < tf_object_array.length; i++) {
 						trustedform_array.push(tf_object_array[i]);
-						console.log('push: ' + tf_object_array[i])
 					}
 					this.setState({trustedform_resubmission_array: trustedform_array});
 					var number_successful_resubmits = 0;

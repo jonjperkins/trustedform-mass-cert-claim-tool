@@ -1,27 +1,3 @@
-/*App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 80px;
-}
-
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
-}
-
-.App-intro {
-  font-size: large;
-}
-
-.green {
-  color: #C5DA7B;
-}
-*/
-
 .left {
 	height: 300px;
 }
@@ -31,6 +7,9 @@
 .right {
 	height: 300px;
 }
+
+/* Headers */
+
 .header {
 	border-radius: 2px;
 	padding-top: 5px;
@@ -73,6 +52,9 @@
 	margin-top: 10px;
 	margin-right: 40px;
 }
+
+/* Icons and Completed Items */
+
 .icons {
 	color: white;
 }
@@ -92,6 +74,19 @@
 	font-weight: bold;
 	font-size: 1.1em;
 }
+.list-div {
+	text-overflow: clip;
+	overflow-y: scroll;
+	overflow-x: hidden; 
+	height: 700px;
+	margin-left: -2px; 
+	padding-left: 10px; 
+	box-shadow: inset 0 1px 3px rgba(0,0,0,0.1), 0 1px 2px rgba(0,0,0,0.1);
+	border-radius: 2px;
+}
+
+/* View Flow div */
+
 .info-circle {
 	margin-top: 60px;
 	color: #f58025;
@@ -108,16 +103,9 @@
 .input {
 	margin-top: 10px;
 }
-.list-div {
-	text-overflow: clip;
-	overflow-y: scroll;
-	overflow-x: hidden; 
-	height: 700px;
-	margin-left: -2px; 
-	padding-left: 10px; 
-	box-shadow: inset 0 1px 3px rgba(0,0,0,0.1), 0 1px 2px rgba(0,0,0,0.1);
-	border-radius: 2px;
-}
+
+/* Results */ 
+
 .grayed-out {
 	color: #D6D6D7;
 }

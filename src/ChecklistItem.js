@@ -1,15 +1,10 @@
 import React, { Component } from 'react';
 import Icon from './Icon';
 import './App.css';
-import 'font-awesome/css/font-awesome.css';
 
 import{Row, Col} from 'react-bootstrap';
-var FontAwesome = require('react-fontawesome');
 
 class CompletedItems extends Component {
-	componentDidMount() {
-		console.log(typeof this.props.accountsResubmittedArray);
-	}
 	render() {
     	return (				
 			<Row>

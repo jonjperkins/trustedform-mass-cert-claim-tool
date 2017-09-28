@@ -1,11 +1,8 @@
 import React, { Component } from 'react';
-import Icon from './Icon';
 import ResultCount from './ResultCount';
 import './App.css';
-import 'font-awesome/css/font-awesome.css';
 
 import{Row, Col} from 'react-bootstrap';
-var FontAwesome = require('react-fontawesome');
 
 class Results extends Component {
 	render() {
