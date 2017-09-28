@@ -5,10 +5,10 @@ import './App.css';
 import{Row, Col} from 'react-bootstrap';
 
 class CompletedItems extends Component {
-	render() {
-    	return (				
-			<Row>
-				<Col md={2}>
+  render() {
+    return (				
+		  <Row>
+			  <Col md={2}>
 					<Icon 
 						name={this.props.name} 
 						className={this.props.className} 
@@ -21,8 +21,8 @@ class CompletedItems extends Component {
 					</div>
 				</Col>
 			</Row>
-    	);
-    }
+    );
+  }
 }
 
 export default CompletedItems;
