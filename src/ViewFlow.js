@@ -10,9 +10,9 @@ class ViewFlow extends Component {
     		<a href={this.props.url} className="view-flow-div" target="_blank">
     			<div style={{height: "100%"}}>
     				<FontAwesome 
-                        className={this.props.className} 
-                        name={this.props.name} 
-                        size={this.props.size}
+                    className={this.props.className} 
+                    name={this.props.name} 
+                    size={this.props.size}
                     />
     				<h4 className="view-flow-text">{this.props.text}</h4>
     			</div>
