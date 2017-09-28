@@ -8,9 +8,8 @@ http://trustedform-resubmission-tool.herokuapp.com/
 [React.js](https://facebook.github.io/react/)
 
 ## **API**: 
-This application utilized the LeadConduit helper API in order to circumvent CORS issues accompanying the fetch API: https://github.com/jonjperkins/leadconduit-guide-api. 
+This application utilizes the LeadConduit helper API in order to circumvent CORS issues accompanying the fetch API: https://github.com/jonjperkins/leadconduit-guide-api. 
 
 ## **Images**:
 Dashboard:
-![Image of dashboard]
-(https://imgur.com/a/idAC0)
+![Image of dashboard](https://imgur.com/a/idAC0)
