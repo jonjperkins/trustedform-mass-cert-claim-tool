@@ -7,7 +7,11 @@ class Header extends Component {
     	return (
     		<div className={this.props.headerType}>
 	    		<div className="icon-position">
-	    			<Icon name={this.props.name} className={this.props.className} size={this.props.size} />    					
+	    			<Icon 
+	    				name={this.props.name} 
+	    				className={this.props.className} 
+	    				size={this.props.size} 
+	    			/>    					
 	    		</div>
 	    		<div className={this.props.headerType === "results-header" ? "header-title-results" : "header-title"}>
 	    			{ this.props.headerType === "successful-resubmits-header header" &&

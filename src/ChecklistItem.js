@@ -9,7 +9,11 @@ class CompletedItems extends Component {
     	return (				
 			<Row>
 				<Col md={2}>
-					<Icon name={this.props.name} className={this.props.className} size={this.props.size} />    					
+					<Icon 
+						name={this.props.name} 
+						className={this.props.className} 
+						size={this.props.size} 
+					/>    					
 				</Col>
 				<Col md={10}>
 					<div>

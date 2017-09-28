@@ -14,13 +14,23 @@ class Input extends Component {
                 </Row>
                 <Row>
                     <Col xs={6} xsOffset={3}>
-    			        <FormControl autoFocus name="api_key" className="input" type="text" required onChange={this.props.handleUpdateAPIKey}></FormControl>
+    			        <FormControl 
+                            autoFocus name="api_key" 
+                            className="input" 
+                            type="text" 
+                            required 
+                            onChange={this.props.handleUpdateAPIKey}>
+                        </FormControl>
                         <h6 style={{color: "#FE2533", height: "2vh"}}>{this.props.errorMessage}</h6>
                     </Col>
                 </Row>
                 <Row> 
                     <Col xs={6} xsOffset={3} style={{textAlign: "center", marginTop: "20px"}}>
-                        <Button disabled={!this.props.api_key} onClick={this.props.handleFetchLeadsWithTrustedFormErrors}>Resubmit</Button>
+                        <Button 
+                        disabled={!this.props.api_key} 
+                        onClick={this.props.handleFetchLeadsWithTrustedFormErrors}>
+                            Resubmit
+                        </Button>
                     </Col>
                 </Row>
             </div>

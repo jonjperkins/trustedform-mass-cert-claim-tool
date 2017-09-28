@@ -90,27 +90,83 @@ class Main extends Component {
     		<Grid fluid style={{ paddingLeft: "2px", paddingRight: "2px", marginTop: "5px" }}>
     			<Row>
     				<Col xs={12} md={3} style={{ paddingRight: "2px"}} className="left">
-						<Header name="list" className="icons" size="3x" headerType="successful-resubmits-header header" accountsResubmittedArray={this.state.accounts_resubmitted_array} title="Resubmitted" />
-    						<CompletedItems accountsResubmittedArray={this.state.accounts_resubmitted_array} name="check-circle" size="2x" className="checkmarks"/>
+						<Header 
+							name="list" 
+							className="icons" 
+							size="3x" 
+							headerType="successful-resubmits-header header" 
+							accountsResubmittedArray={this.state.accounts_resubmitted_array}
+							title="Resubmitted" 
+						/>
+    					<CompletedItems 
+    						accountsResubmittedArray={this.state.accounts_resubmitted_array} 
+    						name="check-circle" 
+    						size="2x" 
+    						className="checkmarks"
+    					/>
     				</Col>
     				<Col xs={12} md={6} style={{ paddingRight: "2px", paddingLeft: "2px", height: "50vh"}} className="center">
-    					<Header name="code" className="icons" size="3x" headerType="enter-api-header header" title="Resubmit TrustedForm Certificates"/>
-    					<Input api_key={this.state.api_key} handleUpdateAPIKey={this.handleUpdateAPIKey} handleFetchLeadsWithTrustedFormErrors={this.handleFetchLeadsWithTrustedFormErrors} errorMessage={this.state.error_message} />
+    					<Header 
+    						name="code" 
+    						className="icons" 
+    						size="3x" 
+    						headerType="enter-api-header header" 
+    						title="Resubmit TrustedForm Certificates"
+    					/>
+    					<Input 
+    						api_key={this.state.api_key} 
+    						handleUpdateAPIKey={this.handleUpdateAPIKey} 
+    						handleFetchLeadsWithTrustedFormErrors={this.handleFetchLeadsWithTrustedFormErrors} 
+    						errorMessage={this.state.error_message} 
+    					/>
     				</Col>
     				<Col xs={12} md={3} style={{ paddingLeft: "2px", textAlign: "center", height: "42vh"}} className="right">
-    					<Header name="info-circle" className="icons" size="3x" headerType="view-leadconduit-flow header" title="LeadConduit Flow" />
-    					<ViewFlow name="code-fork" size="4x" className="info-circle" text="Click here to visit the TrustedForm Resubmission flow" url="https://next.leadconduit.com/events?source_id=59aec2571486a71874fb82ac&type=source" />
+    					<Header 
+    						name="info-circle" 
+    						className="icons" 
+    						size="3x" 
+    						headerType="view-leadconduit-flow header" 
+    						title="LeadConduit Flow" 
+    						/>
+    					<ViewFlow 
+    						name="code-fork" 
+    						size="4x" 
+    						className="info-circle" 
+    						text="Click here to visit the TrustedForm Resubmission flow" 
+    						url="https://next.leadconduit.com/events?source_id=59aec2571486a71874fb82ac&type=source" 
+    					/>
     				</Col>
     			</Row>
     			<Row>
     				<Col md={3}/>
     				<Col md={6} xs={12} style={{ paddingRight: "2px", paddingLeft: "2px" }}>
-    					<Header name="file" className="icons" size="3x" headerType="results-header results-header-adjustment" title={this.state.account_name}/>
-    					<Results numberSuccessfulResubmits={this.state.number_successful_resubmits} numberUnsuccessfulResubmits={this.state.number_unsuccessful_resubmits} />
+    					<Header 
+    						name="file" 
+    						className="icons" 
+    						size="3x" 
+    						headerType="results-header results-header-adjustment" 
+    						title={this.state.account_name}
+    					/>
+    					<Results 
+    						numberSuccessfulResubmits={this.state.number_successful_resubmits} 
+    						numberUnsuccessfulResubmits={this.state.number_unsuccessful_resubmits} 
+    					/>
     				</Col>
     				<Col md={3} xs ={12} style={{paddingLeft: "2px", textAlign: "center", height: "42vh"}}>
-    					<Header name="paper-plane" className="icons" size="3x" headerType="view-leadconduit-flow header" title="Zendesk Batch File" />
-    					<ViewFlow name="code-fork" size="4x" className="info-circle" text="Click here to find a batch file of all resubmitted certificates" url="https://next.leadconduit.com/batches/files" />
+    					<Header 
+    						name="paper-plane" 
+    						className="icons" 
+    						size="3x" 
+    						headerType="view-leadconduit-flow header" 
+    						title="Zendesk Batch File" 
+    					/>
+    					<ViewFlow 
+    						name="code-fork" 
+    						size="4x" 
+    						className="info-circle" 
+    						text="Click here to find a batch file of all resubmitted certificates" 
+    						url="https://next.leadconduit.com/batches/files" 
+    					/>
     				</Col>
     			</Row>
     		</Grid>
