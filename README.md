@@ -12,4 +12,4 @@ This application utilizes the LeadConduit helper API in order to circumvent CORS
 
 ## **Images**:
 Dashboard:
-![Image of dashboard](https://imgur.com/a/idAC0)
+![Image of dashboard](/images/dashboard.png)
