@@ -21,7 +21,8 @@ class Main extends Component {
 			number_successful_resubmits: "",
 			number_unsuccessful_resubmits: "",
 			accounts_resubmitted_array: [],
-			error_message: ""
+			error_message: "",
+            waiting_for_fetch: false
 		}
 		this.handleUpdateAPIKey = this.handleUpdateAPIKey.bind(this);
 		this.handleFetchLeadsWithTrustedFormErrors = this.handleFetchLeadsWithTrustedFormErrors.bind(this)
@@ -30,10 +31,11 @@ class Main extends Component {
 		this.setState({ api_key: event.target.value });
 	}
 	handleFetchLeadsWithTrustedFormErrors() {
+        this.setState({waiting_for_fetch: true});
 		this.setState({error_message: ""});
-		var URL = "https://next.leadconduit.com/events?recipient_id=535e9f8c94149d05b5000002&type=recipient&outcome=error&start=" + moment().subtract(3, 'days').format('YYYY-MM-DD') + "&end=" + moment().format('YYYY-MM-DD') + ""
+		var URL = "https://next.leadconduit.com/events?recipient_id=535e9f8c94149d05b5000002&type=recipient&outcome=error&start=" + /* moment().subtract(3, 'days').format('YYYY-MM-DD') */ "2017-09-13" + "&end=" + /* moment().format('YYYY-MM-DD') */ "2017-09-21" + ""
 		console.log("POST request URL: " + URL)
-		var request = new Request("http://leadconduit-node-server.herokuapp.com/trusted-form-errors", {
+		var request = new Request(/*"http://leadconduit-node-server.herokuapp.com/trusted-form-errors" */ "http://localhost:8080/trusted-form-errors", {
 			method: "POST",
 			headers: new Headers({
 				"Accept": "application/json",
@@ -44,7 +46,7 @@ class Main extends Component {
 		fetch(request)
 		.then((response) => {
 			response.text().then(text => {
-				console.log('this ' + text)
+				this.setState({waiting_for_fetch: false})
 				if (text === "bad_api_key") {
 					this.setState({error_message: "Please use a valid API Key."})
 					return;
@@ -117,7 +119,8 @@ class Main extends Component {
     						api_key={this.state.api_key} 
     						handleUpdateAPIKey={this.handleUpdateAPIKey} 
     						handleFetchLeadsWithTrustedFormErrors={this.handleFetchLeadsWithTrustedFormErrors} 
-    						errorMessage={this.state.error_message} 
+    						errorMessage={this.state.error_message}
+                            waiting_for_fetch={this.state.waiting_for_fetch}
     					/>
     				</Col>
     				<Col xs={12} md={3} style={{ paddingLeft: "2px", textAlign: "center", height: "42vh"}} className="right">

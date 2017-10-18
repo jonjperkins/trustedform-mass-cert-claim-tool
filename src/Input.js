@@ -1,5 +1,6 @@
-import React, { Component } from 'react';
-import './App.css';
+import React, { Component } from "react";
+import Icon from "./Icon";
+import "./App.css";
 
 import{Col, Row, FormControl, Button} from 'react-bootstrap';
 
@@ -26,11 +27,21 @@ class Input extends Component {
         </Row>
         <Row> 
           <Col xs={6} xsOffset={3} style={{textAlign: "center", marginTop: "20px"}}>
-            <Button 
-              disabled={!this.props.api_key} 
-              onClick={this.props.handleFetchLeadsWithTrustedFormErrors}>
-                Resubmit
-            </Button>
+            {!this.props.waiting_for_fetch &&
+              <Button 
+                disabled={!this.props.api_key} 
+                onClick={this.props.handleFetchLeadsWithTrustedFormErrors}>
+                  Resubmit
+              </Button>
+            }
+            {this.props.waiting_for_fetch && 
+              <Icon 
+                name="spinner"
+                size="3x"
+                pulse="true"
+                className="grayed-out"
+              />
+            }
            </Col>
         </Row>
        </div>

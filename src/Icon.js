@@ -9,7 +9,8 @@ class Icon extends Component {
       <FontAwesome 
     	  className={this.props.className} 
     		name={this.props.name} 
-    		size={this.props.size} 
+    		size={this.props.size}
+    		pulse={this.props.pulse}
     	/>
     );
   }
