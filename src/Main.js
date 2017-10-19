@@ -33,9 +33,9 @@ class Main extends Component {
 	handleFetchLeadsWithTrustedFormErrors() {
         this.setState({waiting_for_fetch: true});
 		this.setState({error_message: ""});
-		var URL = "https://next.leadconduit.com/events?recipient_id=535e9f8c94149d05b5000002&type=recipient&outcome=error&start=" + /* moment().subtract(3, 'days').format('YYYY-MM-DD') */ "2017-09-13" + "&end=" + /* moment().format('YYYY-MM-DD') */ "2017-09-21" + ""
+		var URL = "https://next.leadconduit.com/events?recipient_id=535e9f8c94149d05b5000002&type=recipient&outcome=error&start=" +  moment().subtract(3, 'days').format('YYYY-MM-DD')
 		console.log("POST request URL: " + URL)
-		var request = new Request(/*"http://leadconduit-node-server.herokuapp.com/trusted-form-errors" */ "http://localhost:8080/trusted-form-errors", {
+		var request = new Request(/* "http://leadconduit-node-server.herokuapp.com/trusted-form-errors" */ "http://www.localhost:8080/trusted-form-errors", {
 			method: "POST",
 			headers: new Headers({
 				"Accept": "application/json",
