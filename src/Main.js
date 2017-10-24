@@ -98,7 +98,7 @@ class Main extends Component {
 							size="3x" 
 							headerType="successful-resubmits-header header" 
 							accountsResubmittedArray={this.state.accounts_resubmitted_array}
-							title="Resubmitted" 
+							title="Completed" 
 						/>
     					<CompletedItems 
     						accountsResubmittedArray={this.state.accounts_resubmitted_array} 
@@ -135,7 +135,7 @@ class Main extends Component {
     						name="code-fork" 
     						size="4x" 
     						className="info-circle" 
-    						text="Click here to visit the TrustedForm Resubmission flow" 
+    						text="Click here to visit the TrustedForm Resubmission flow." 
     						url="https://next.leadconduit.com/events?source_id=59aec2571486a71874fb82ac&type=source" 
     					/>
     				</Col>
@@ -167,7 +167,7 @@ class Main extends Component {
     						name="code-fork" 
     						size="4x" 
     						className="info-circle" 
-    						text="Click here to find a batch file of all resubmitted certificates" 
+    						text="Click here to deliver the batch file of resubmitted certificates to support." 
     						url="https://next.leadconduit.com/batches/files" 
     					/>
     				</Col>
